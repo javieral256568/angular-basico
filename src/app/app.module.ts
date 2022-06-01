@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 //import { ListadoComponent } from './heroes/listado/listado.component';
 import { HeroesModule } from './heroes/heroes.module';
 import { ContadorModule } from './contador/contador.module';
+import { DbzModule } from './dbz/dbz.module';
+import { DbzService } from './dbz/services/dbz.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,12 @@ import { ContadorModule } from './contador/contador.module';
   imports: [
     BrowserModule,
     HeroesModule,  /* Ya no es un componente, se importa como modulo */
-    ContadorModule
+    ContadorModule,
+    DbzModule
   ],
-  providers: [],
+  providers: [
+    DbzService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
